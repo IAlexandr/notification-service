@@ -1,14 +1,20 @@
 const version = require('./package.json').version;
+import credentials from './credentials';
 const optionsSpec = {
   SENDER_GMAIL_LOGIN: {
     required: true,
-    default: 'asdasd',  // без @gmail.com
+    default: credentials.SENDER_GMAIL_LOGIN,  // без @gmail.com
     env: 'NS_SENDER_GMAIL_LOGIN'
   },
   SENDER_GMAIL_PASS: {
     required: true,
-    default: '***',
+    default: credentials.SENDER_GMAIL_PASS,
     env: 'NS_SENDER_GMAIL_PASS'
+  },
+  SLACK_WEBHOOK_URI: {
+    required: true,
+    default: credentials.SLACK_WEBHOOK_URI,
+    env: 'NS_SLACK_WEBHOOK_URI'
   },
   PORT: {
     required: true,
@@ -28,7 +34,7 @@ const optionsSpec = {
   },
   NOTIFY_MAIL_LIST: {
     require: true,
-    default: "kjkhkjh@jhjh.ru",
+    default: credentials.NOTIFY_MAIL_LIST,
     env: 'NS_NOTIFY_MAIL_LIST',
     preprocess: function (src) {
       const sr = src ? src.split(',').map(function (s) {
