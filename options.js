@@ -17,7 +17,7 @@ const optionsSpec = {
   },
   REG_SOCKET_HOSTS: {
     require: true,
-    default: "127.0.0.1",
+    default: "110.10.0.227",
     env: 'NS_REG_SOCKET_HOSTS',
     preprocess: function (src) {
       const sr = src ? src.split(',').map(function (s) {
@@ -28,7 +28,7 @@ const optionsSpec = {
   },
   NOTIFY_MAIL_LIST: {
     require: true,
-    default: "asdasd@asdasdasd.ru,asdasd@asdasdasd.ru",
+    default: "kjkhkjh@jhjh.ru",
     env: 'NS_NOTIFY_MAIL_LIST',
     preprocess: function (src) {
       const sr = src ? src.split(',').map(function (s) {
